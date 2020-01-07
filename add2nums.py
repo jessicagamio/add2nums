@@ -26,11 +26,14 @@ def add2num(ll1,ll2):
                 carryover = node%10
                 node = abs(node/10)
 
+
         if ll3 == None:
             ll3 = Node(node)
         else:
             ll3.next = Node(node)
             ll3 = ll3.next
+
+        print(ll3.data)
 
         curr1 = curr1.next
         curr2 = curr2.next
@@ -44,5 +47,6 @@ ll1.next.next = Node(3)
 ll2 = Node(5)
 ll2.next = Node(6)
 ll2.next.next = Node(4)
+
 answer = add2num(ll1,ll2)
 print(answer)
