@@ -4,8 +4,8 @@ class Node(object):
         self.next = None
 
 def add2num(ll1,ll2):
-    curr1 = ll1.data
-    curr2 = ll2.data
+    curr1 = ll1
+    curr2 = ll2
 
     carryover=0
 
@@ -31,6 +31,9 @@ def add2num(ll1,ll2):
         else:
             ll3.next = Node(node)
             ll3 = ll3.next
+
+        curr1 = curr1.next
+        curr2 = curr2.next
 
     return ll3
 
