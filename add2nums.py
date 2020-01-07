@@ -24,20 +24,21 @@ def add2num(ll1,ll2):
         if curr1 == None and curr2:
             curr1.data = 0
 
-        if curr2 == None and curr1:
+        elif curr2 == None and curr1:
             curr2.data = 0
 
-        if curr1 and curr2:
+        else:
             node = curr1.data + curr2.data + carryover
 
-            # if node has a value in tens place carryover number to following node
-            if node >= 10:
+            # if node has a value in tens place and additional nodes exist carryoverto following node
+            if node >= 10 and curr1.next or curr2.next:
                 carryover = node//10
                 node = node%10
 
         # if linked list has no node create head node
         if ll3.head == None:
             ll3.head = Node(node)
+            ll3.tail = ll3.head
             
         # if no node follows head of linked list add tail
         elif ll3.head.next == None:
